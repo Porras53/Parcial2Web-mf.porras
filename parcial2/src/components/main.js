@@ -1,12 +1,10 @@
 import { useState } from "reacts";
 
-import EspaciosList from "./Espacio/EspaciosList";
-
+import Principal from "./Principal/Principal";
 
 function Main() {
 
-
-    return <EspaciosList />;
+    return <Principal />;
 
 }
 export default Main;

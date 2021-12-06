@@ -1,0 +1,20 @@
+{
+    "tituloEspacios": " Mis Espacios",
+    "tituloSalas":"Mis Salas",
+    "casa": "Casa",
+    "apartamento":"Apartamento",
+    "cocina":"Cocina",
+    "sala":"Sala",
+    "comedor" :"Comedor",
+    "temperatura":"temperatura",
+    "luz":"luz",
+    "humedad" : "humedad",
+    "prendido" : "prendido",
+    "apagado" : "apagado",
+    "door" : "puerta",
+    "device" : "Dispositivos",
+    "valor": "Valor",
+    "open" : "abierto",
+    "gas" : "Gas"
+
+  }

@@ -1,0 +1,19 @@
+{
+    "tituloEspacios": "My Spaces",
+    "tituloSalas":"My Rooms",
+    "casa": "House",
+    "apartamento":"Apartament",
+    "cocina":"Kitchen",
+    "sala":"Living room",
+    "comedor" :"Dinner room",
+    "temperatura":"temperature",
+    "luz":"light",
+    "humedad" : "humidity",
+    "prendido" : "on",
+    "apagado" : "off",
+    "door" : "door",
+    "device" : "Device",
+    "valor": "Value",
+    "open" : "open",
+    "gas" : "Gas"
+  }
