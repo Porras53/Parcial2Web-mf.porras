@@ -5,7 +5,7 @@ import { FormattedDate, FormattedMessage, FormattedNumber } from "react-intl";
 function DispositivoList(props) {
   
   return (
-<table class="table">
+<table className="table">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -22,7 +22,7 @@ function DispositivoList(props) {
   </thead>
   <tbody>
     {props.dispositivos.map((d,i) => (
-        <Dispositivo dispositivo={d} conta={i}/>
+        <Dispositivo key={i} dispositivo={d} conta={i}/>
       ))}
   </tbody>
 </table>

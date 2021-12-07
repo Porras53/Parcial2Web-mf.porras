@@ -15,5 +15,6 @@
     "device" : "Device",
     "valor": "Value",
     "open" : "open",
-    "gas" : "Gas"
+    "gas" : "Gas",
+    "boton" : "Show More"
   }

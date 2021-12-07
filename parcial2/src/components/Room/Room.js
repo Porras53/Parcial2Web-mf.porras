@@ -7,10 +7,6 @@ import { FormattedDate, FormattedMessage, FormattedNumber } from "react-intl";
 
 function Room(props) {
 
-  function cambiarDispositivos(element)
-  {
-    props.click(props.espacio.devices)
-  }
 
   let img = "";
   let idActual = "";
@@ -32,14 +28,17 @@ function Room(props) {
     return (
       <div className="col">
         <div className="row" id="fondo-equipos" style={{ height: "auto" }}>
-            <div class="card" style={{width: "18rem"}}>
-        <img src={img} class="card-img-top" alt="..."></img>
-<div class="card-body">
-    <h5 class="card-title"> <FormattedMessage
+            <div className="card" style={{width: "18rem"}}>
+        <img src={img} className="card-img-top" alt="..."></img>
+<div className="card-body">
+    <h5 className="card-title"> <FormattedMessage
     id={idActual}
     defaultMessage="asdas"
     /></h5>
-    <a href="#" className="btn btn-primary" onClick={cambiarDispositivos}>Go somewhere</a>
+    <button className="btn btn-primary" onClick={() =>  props.click(props.espacio.devices)}><FormattedMessage
+          id="boton"
+          defaultMessage="asdas"
+          /></button>
   </div>
 </div>
         </div>

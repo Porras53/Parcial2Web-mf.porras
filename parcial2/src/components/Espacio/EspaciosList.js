@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FormattedDate, FormattedMessage, FormattedNumber } from "react-intl";
+import {FormattedMessage} from "react-intl";
 import Espacio from "./Espacio";
 
 
@@ -17,7 +17,6 @@ function EspaciosList(props) {
           async function fetchGuardarInfo() {
             let tempo= await fetchInfoEspacios();
             localStorage.setItem("espacios", tempo);
-            console.log("local storage",tempo);
             setEspaciosFinal(tempo);
           }
 
@@ -42,8 +41,8 @@ function EspaciosList(props) {
           /></h1>
       {/* <h1> My Spaces </h1> */}
       <div className="row">
-        {espaciosFinal?.map((l) => (
-        <Espacio espacio={l} click={props.click} />
+        {espaciosFinal?.map((l,id) => (
+        <Espacio espacio={l} key={id} click={props.click} />
       ))}
       <br></br>
       </div>

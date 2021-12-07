@@ -1,6 +1,8 @@
+import React from "react";
 import { useState, useEffect } from "react";
-import { FormattedDate, FormattedMessage, FormattedNumber } from "react-intl";
+import { FormattedMessage} from "react-intl";
 import Room from "./Room";
+import Grafica from "../Grafica/Grafica";
 
 
 function RoomList(props) {
@@ -8,6 +10,9 @@ function RoomList(props) {
     const [espaciosFinal, setEspaciosFinal] = useState([]);
 
     const [todoRooms, setTodoRooms] = useState([]);
+
+    const [espaciosData, setEspaciosData] = useState([]);
+
 
     useEffect(() => {
         async function fetchInfoEspacios() {
@@ -30,14 +35,22 @@ function RoomList(props) {
                   }
                 
               }
+              
               setEspaciosFinal(roomFinales);
+              let nuevoDatos= [];
+              roomFinales.forEach(element => nuevoDatos.push( {
+                    label: element.name,
+                    value: element.powerUsage.value,
+                  }));
+              setEspaciosData(nuevoDatos);
               localStorage.setItem("rooms", roomFinales);
+              
           }
 
           if (!navigator.onLine) {
             if (localStorage.getItem("rooms") === null) 
             {
-              setEspaciosFinal([])
+              setEspaciosFinal([]);
             }
             else 
             {
@@ -52,17 +65,27 @@ function RoomList(props) {
                   
                 }
                 setEspaciosFinal(roomFinales);
+                
+                let nuevoDatos= [];
+              roomFinales.forEach(element => nuevoDatos.push( {
+                    label: element.name,
+                    value: element.powerUsage.value,
+                  }));
+              setEspaciosData(nuevoDatos);
                 localStorage.setItem("rooms", roomFinales);
             }
             ;
           }
           else
           {
+
             fetchGuardarInfo();
+
           }
     }, [props.espacioid]);
 
-  
+    
+
   return (
     <div>
        <h1>
@@ -71,11 +94,17 @@ function RoomList(props) {
           defaultMessage="asdas"
           /></h1>
       <div className="row">
-        {espaciosFinal?.map((l) => (
-        <Room espacio={l} click={props.click}  />
+        {espaciosFinal?.map((l,id) => (
+        <Room espacio={l} key={id} click={props.click}  />
       ))}
       <br></br>
       </div>
+
+      <div className="row">
+        <Grafica data={espaciosData}
+                innerRadius={0}
+                outerRadius={150}/>
+    </div>
       
     </div>
   );
